@@ -244,10 +244,10 @@ else:
 st.sidebar.markdown("""
     <div style='margin-top: 0.75rem;'>
         <p style='font-size: 0.8rem; color: #475569; margin-bottom: 0.5rem; line-height: 1.4;'>
-            <strong>🌸 Kelopak Luar (Sepal):</strong> Bagian pelindung bunga terluar yang menopang kelopak mahkota saat bunga mekar.
+            <strong>Kelopak Luar (Sepal):</strong> Bagian pelindung bunga terluar yang menopang kelopak mahkota saat bunga mekar.
         </p>
         <p style='font-size: 0.8rem; color: #475569; line-height: 1.4;'>
-            <strong>🌺 Kelopak Dalam (Petal):</strong> Mahkota bunga dalam yang berwarna indah dan mencolok.
+            <strong>Kelopak Dalam (Petal):</strong> Mahkota bunga dalam yang berwarna indah dan mencolok.
         </p>
     </div>
 """, unsafe_allow_html=True)
