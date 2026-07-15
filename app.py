@@ -71,14 +71,21 @@ st.markdown("""
         font-weight: 700 !important;
     }
     
-    /* Custom Title Style */
+    /* Custom Title Style (inline rendering for robust wrapping) */
     .main-title {
         color: #1e40af !important;
         font-size: 2.2rem;
         font-weight: 700;
         margin-bottom: 0.2rem;
-        display: flex;
-        align-items: center;
+        line-height: 1.25;
+    }
+    .title-icon {
+        width: 55px;
+        height: auto;
+        vertical-align: middle;
+        margin-right: 12px;
+        border-radius: 6px;
+        display: inline-block;
     }
     .main-subtitle {
         color: #64748b;
@@ -131,8 +138,12 @@ st.markdown("""
     /* Mobile optimization rules (screen sizes smaller than 768px) */
     @media (max-width: 768px) {
         .main-title {
-            font-size: 1.6rem !important;
-            justify-content: center;
+            font-size: 1.5rem !important;
+            text-align: center !important;
+        }
+        .title-icon {
+            width: 42px !important;
+            margin-right: 8px !important;
         }
         .main-subtitle {
             font-size: 0.85rem !important;
@@ -253,13 +264,12 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Main Title Section
-# Embed the custom app icon as a Base64 image in the header title (Resized to 60px)
+# Embed the custom app icon as a Base64 image in the header title
 icon_base64 = get_image_base64(icon_path)
 if icon_base64:
     st.markdown(f"""
         <h1 class='main-title'>
-            <img src="data:image/jpeg;base64,{icon_base64}" width="60" style="vertical-align: middle; margin-right: 15px; border-radius: 6px;"/>
-            Analisis Jenis Bunga Iris
+            <img src="data:image/jpeg;base64,{icon_base64}" class="title-icon"/>Analisis Jenis Bunga Iris
         </h1>
     """, unsafe_allow_html=True)
 else:
