@@ -205,6 +205,18 @@ if os.path.exists(image_path):
 else:
     st.sidebar.warning("Gambar panduan tidak ditemukan di sistem.")
 
+# Sepal and Petal text explanation under the guide image
+st.sidebar.markdown("""
+    <div style='margin-top: 0.75rem;'>
+        <p style='font-size: 0.8rem; color: #475569; margin-bottom: 0.5rem; line-height: 1.4;'>
+            <strong>🌸 Kelopak Luar (Sepal):</strong> Bagian pelindung bunga terluar yang menopang kelopak mahkota saat bunga mekar.
+        </p>
+        <p style='font-size: 0.8rem; color: #475569; line-height: 1.4;'>
+            <strong>🌺 Kelopak Dalam (Petal):</strong> Bagian mahkota bunga dalam yang berwarna indah dan mencolok.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
+
 # GitHub Profile Credit Section at the bottom of the sidebar
 st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 1rem 0;'>", unsafe_allow_html=True)
 st.sidebar.markdown("""
