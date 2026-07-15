@@ -28,6 +28,7 @@ st.set_page_config(
 )
 
 # Custom CSS for modern simple blue minimalist theme with Mobile-Friendly Media Queries
+# Explicitly forcing colors on inputs and dropdown elements to override browser dark mode bugs
 st.markdown("""
     <style>
     /* Clean modern sans-serif typography */
@@ -51,13 +52,19 @@ st.markdown("""
     
     /* Set custom text colors for general markdown and labels */
     p, span, label, div {
-        color: #1e293b;
+        color: #1e293b !important;
     }
     
     /* Header colors */
     h1, h2, h3, h4, h5, h6 {
         color: #0f172a !important;
         font-weight: 700 !important;
+    }
+    
+    /* Force inputs, dropdowns, and list options to have high-contrast text and light background */
+    input, select, textarea, [role="listbox"], [data-baseweb="select"], [data-baseweb="popover"] {
+        color: #1e293b !important;
+        background-color: #ffffff !important;
     }
     
     /* Custom Title Style */
