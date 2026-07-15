@@ -158,9 +158,9 @@ st.markdown("""
             font-size: 1.25rem !important;
             margin-top: 0.25rem !important;
         }
-        /* Reduce block container margins on mobile */
+        /* Push main content container down to clear the floating top header bar on mobile */
         .block-container {
-            padding-top: 1rem !important;
+            padding-top: 3.5rem !important;
             padding-left: 0.5rem !important;
             padding-right: 0.5rem !important;
         }
