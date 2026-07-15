@@ -232,7 +232,10 @@ with st.sidebar:
     petal_width = st.slider("Lebar Kelopak Dalam (cm)", 0.1, 2.5, key='petal_w', step=0.1)
 
 # Embed visual Iris Diagram Guide in the sidebar with absolute path resolution
-st.sidebar.image_filename = "iris_guide.png"
+st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0;'>", unsafe_allow_html=True)
+st.sidebar.markdown("<h4 style='font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;'>📖 Panduan Bagian Bunga</h4>", unsafe_allow_html=True)
+
+image_filename = "iris_guide.png"
 image_path = os.path.join(script_dir, image_filename)
 
 if os.path.exists(image_path):
@@ -247,7 +250,7 @@ st.sidebar.markdown("""
             <strong>🌸 Kelopak Luar (Sepal):</strong> Bagian pelindung bunga terluar yang menopang kelopak mahkota saat bunga mekar.
         </p>
         <p style='font-size: 0.8rem; color: #475569; line-height: 1.4;'>
-            <strong>🌺 Kelopak Dalam (Petal):</strong> Bagian mahkota bunga dalam yang berwarna indah dan mencolok.
+            <strong>🌺 Kelopak Dalam (Petal):</strong> Mahkota bunga dalam yang berwarna indah dan mencolok.
         </p>
     </div>
 """, unsafe_allow_html=True)
