@@ -205,6 +205,14 @@ if os.path.exists(image_path):
 else:
     st.sidebar.warning("Gambar panduan tidak ditemukan di sistem.")
 
+# GitHub Profile Credit Section at the bottom of the sidebar
+st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 1rem 0;'>", unsafe_allow_html=True)
+st.sidebar.markdown("""
+    <div style='text-align: center; font-size: 0.8rem; color: #64748b;'>
+        Dibuat oleh <a href='https://github.com/khamalputra' target='_blank' style='color: #1e40af; text-decoration: none; font-weight: 600;'>khamalputra</a> 💙
+    </div>
+""", unsafe_allow_html=True)
+
 # Main Title Section
 st.markdown("<h1 class='main-title'>🌺 Analisis Jenis Bunga Iris</h1>", unsafe_allow_html=True)
 st.markdown("<p class='main-subtitle'>Hasil prediksi dan perbandingan dimensi kelopak ditampilkan secara real-time di bawah ini.</p>", unsafe_allow_html=True)
