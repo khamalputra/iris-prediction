@@ -222,7 +222,7 @@ image_filename = "iris_guide.png"
 image_path = os.path.join(script_dir, image_filename)
 
 if os.path.exists(image_path):
-    st.sidebar.image(image_path, use_container_width=True)
+    st.sidebar.image(image_path, width='stretch')
 else:
     st.sidebar.warning("Gambar panduan tidak ditemukan di sistem.")
 
@@ -328,4 +328,4 @@ else:
     st.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 2rem 0;'>", unsafe_allow_html=True)
     st.markdown("<h3 style='font-size: 1.2rem; margin-bottom: 1rem;'>🌸 Mengenal Spesies Bunga Iris</h3>", unsafe_allow_html=True)
     with st.container(border=True):
-        st.image("https://miro.medium.com/v2/resize:fit:1400/1*ZK9_HrpP_lhSzTq9xVJUQw.png", caption="Perbandingan Tiga Spesies: Iris Setosa, Iris Versicolor, dan Iris Virginica", use_container_width=True)
+        st.image("https://miro.medium.com/v2/resize:fit:1400/1*ZK9_HrpP_lhSzTq9xVJUQw.png", caption="Perbandingan Tiga Spesies: Iris Setosa, Iris Versicolor, dan Iris Virginica", width='stretch')
