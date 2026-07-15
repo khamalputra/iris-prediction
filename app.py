@@ -290,3 +290,9 @@ else:
         # Plotting clean horizontal minimalist bar chart
         with st.container(border=True):
             st.bar_chart(chart_data, color="#3b82f6", horizontal=True)
+
+    # Full width visual reference gallery at the bottom
+    st.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 2rem 0;'>", unsafe_allow_html=True)
+    st.markdown("<h3 style='font-size: 1.2rem; margin-bottom: 1rem;'>🌸 Mengenal Spesies Bunga Iris</h3>", unsafe_allow_html=True)
+    with st.container(border=True):
+        st.image("https://miro.medium.com/v2/resize:fit:1400/1*ZK9_HrpP_lhSzTq9xVJUQw.png", caption="Perbandingan Tiga Spesies: Iris Setosa, Iris Versicolor, dan Iris Virginica", use_container_width=True)
