@@ -220,7 +220,7 @@ st.markdown("<p class='main-subtitle'>Hasil prediksi dan perbandingan dimensi ke
 # Mobile-friendly tips banner (Streamlit sidebar is collapsed by default on mobile)
 st.markdown("""
     <div style='background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.85rem; color: #1e40af; margin-bottom: 1.5rem;'>
-        <strong>💡 Petunjuk HP (Mobile):</strong> Tekan tombol panah kecil <strong>&gt;</strong> di pojok kiri atas layar untuk membuka panel pengatur kelopak bunga.
+        <strong>💡 Petunjuk HP (Mobile):</strong> Tekan tombol panah kecil <strong>&gt;&gt;</strong> di pojok kiri atas layar untuk membuka panel pengatur kelopak bunga.
     </div>
 """, unsafe_allow_html=True)
 
