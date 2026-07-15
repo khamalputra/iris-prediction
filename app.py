@@ -8,7 +8,7 @@ from PIL import Image
 
 # Resolve absolute path for the tab icon
 script_dir = os.path.dirname(os.path.abspath(__file__))
-icon_filename = "icon-app.png.jpg"
+icon_filename = "icon-app.png"
 icon_path = os.path.join(script_dir, icon_filename)
 
 # Check and open local image as icon, fallback to emoji if there's any loading issue
@@ -232,9 +232,6 @@ with st.sidebar:
     petal_width = st.slider("Lebar Kelopak Dalam (cm)", 0.1, 2.5, key='petal_w', step=0.1)
 
 # Embed visual Iris Diagram Guide in the sidebar with absolute path resolution
-st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0;'>", unsafe_allow_html=True)
-st.sidebar.markdown("<h4 style='font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;'>📖 Panduan Bagian Bunga</h4>", unsafe_allow_html=True)
-
 image_filename = "iris_guide.png"
 image_path = os.path.join(script_dir, image_filename)
 
@@ -264,12 +261,12 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Main Title Section
-# Embed the custom app icon as a Base64 image in the header title
+# Embed the custom app icon as a Base64 image in the header title (PNG supports transparency)
 icon_base64 = get_image_base64(icon_path)
 if icon_base64:
     st.markdown(f"""
         <h1 class='main-title'>
-            <img src="data:image/jpeg;base64,{icon_base64}" class="title-icon"/>Analisis Jenis Bunga Iris
+            <img src="data:image/png;base64,{icon_base64}" class="title-icon"/>Analisis Jenis Bunga Iris
         </h1>
     """, unsafe_allow_html=True)
 else:
@@ -354,11 +351,11 @@ else:
     # Full width visual reference gallery at the bottom
     st.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 2rem 0;'>", unsafe_allow_html=True)
     
-    # Embed custom app icon in the bottom section header
+    # Embed custom app icon in the bottom section header (PNG supports transparency)
     if icon_base64:
         st.markdown(f"""
             <h3 style='font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center;'>
-                <img src="data:image/jpeg;base64,{icon_base64}" width="28" style="vertical-align: middle; margin-right: 8px; border-radius: 3px;"/>
+                <img src="data:image/png;base64,{icon_base64}" width="28" style="vertical-align: middle; margin-right: 8px; border-radius: 3px;"/>
                 Mengenal Spesies Bunga Iris
             </h3>
         """, unsafe_allow_html=True)
