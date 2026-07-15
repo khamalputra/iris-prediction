@@ -3,11 +3,26 @@ import pickle
 import numpy as np
 import pandas as pd
 import os
+from PIL import Image
+
+# Resolve absolute path for the tab icon
+script_dir = os.path.dirname(os.path.abspath(__file__))
+icon_filename = "icon-app.png.jpg"
+icon_path = os.path.join(script_dir, icon_filename)
+
+# Check and open local image as icon, fallback to emoji if there's any loading issue
+if os.path.exists(icon_path):
+    try:
+        app_icon = Image.open(icon_path)
+    except Exception:
+        app_icon = "🌺"
+else:
+    app_icon = "🌺"
 
 # Set page configuration
 st.set_page_config(
     page_title="Prediksi Jenis Bunga Iris",
-    page_icon="🌺",
+    page_icon=app_icon,
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -197,7 +212,6 @@ st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0;'>", un
 st.sidebar.markdown("<h4 style='font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;'>📖 Panduan Bagian Bunga</h4>", unsafe_allow_html=True)
 
 image_filename = "iris_guide.png"
-script_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(script_dir, image_filename)
 
 if os.path.exists(image_path):
