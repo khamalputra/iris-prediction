@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import os
+import base64
 from PIL import Image
 
 # Resolve absolute path for the tab icon
@@ -26,6 +27,16 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# Helper function to convert local image to base64 for embedding in HTML headers
+def get_image_base64(filepath):
+    try:
+        if os.path.exists(filepath):
+            with open(filepath, "rb") as f:
+                return base64.b64encode(f.read()).decode()
+    except Exception:
+        pass
+    return None
 
 # Custom CSS for modern simple blue minimalist theme with Mobile-Friendly Media Queries
 st.markdown("""
@@ -66,6 +77,8 @@ st.markdown("""
         font-size: 2.2rem;
         font-weight: 700;
         margin-bottom: 0.2rem;
+        display: flex;
+        align-items: center;
     }
     .main-subtitle {
         color: #64748b;
@@ -119,7 +132,7 @@ st.markdown("""
     @media (max-width: 768px) {
         .main-title {
             font-size: 1.6rem !important;
-            text-align: center;
+            justify-content: center;
         }
         .main-subtitle {
             font-size: 0.85rem !important;
@@ -240,7 +253,18 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Main Title Section
-st.markdown("<h1 class='main-title'>🌺 Analisis Jenis Bunga Iris</h1>", unsafe_allow_html=True)
+# Embed the custom app icon as a Base64 image in the header title
+icon_base64 = get_image_base64(icon_path)
+if icon_base64:
+    st.markdown(f"""
+        <h1 class='main-title'>
+            <img src="data:image/jpeg;base64,{icon_base64}" width="42" style="vertical-align: middle; margin-right: 12px; border-radius: 4px;"/>
+            Analisis Jenis Bunga Iris
+        </h1>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("<h1 class='main-title'>🌺 Analisis Jenis Bunga Iris</h1>", unsafe_allow_html=True)
+
 st.markdown("<p class='main-subtitle'>Hasil prediksi dan perbandingan dimensi kelopak ditampilkan secara real-time di bawah ini.</p>", unsafe_allow_html=True)
 
 # Mobile-friendly tips banner (Streamlit sidebar is collapsed by default on mobile)
