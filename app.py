@@ -216,11 +216,14 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Load model
-model, err = load_pickle_model('best_svm_model.pkl')
+# Load model using absolute path resolution
+model_filename = "best_svm_model.pkl"
+model_path = os.path.join(script_dir, model_filename)
+model, err = load_pickle_model(model_path)
 
 if err:
     st.error(f"Gagal memuat sistem prediksi. Silakan hubungi admin.")
+    st.info(f"Detail Kesalahan: {err}")
 else:
     # Layout columns (Main Page)
     col1, col2 = st.columns([1, 1.2])
