@@ -232,10 +232,7 @@ with st.sidebar:
     petal_width = st.slider("Lebar Kelopak Dalam (cm)", 0.1, 2.5, key='petal_w', step=0.1)
 
 # Embed visual Iris Diagram Guide in the sidebar with absolute path resolution
-st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0;'>", unsafe_allow_html=True)
-st.sidebar.markdown("<h4 style='font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem;'>📖 Panduan Bagian Bunga</h4>", unsafe_allow_html=True)
-
-image_filename = "iris_guide.png"
+st.sidebar.image_filename = "iris_guide.png"
 image_path = os.path.join(script_dir, image_filename)
 
 if os.path.exists(image_path):
@@ -353,6 +350,17 @@ else:
 
     # Full width visual reference gallery at the bottom
     st.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 2rem 0;'>", unsafe_allow_html=True)
-    st.markdown("<h3 style='font-size: 1.2rem; margin-bottom: 1rem;'>🌸 Mengenal Spesies Bunga Iris</h3>", unsafe_allow_html=True)
+    
+    # Embed custom app icon in the bottom section header
+    if icon_base64:
+        st.markdown(f"""
+            <h3 style='font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center;'>
+                <img src="data:image/jpeg;base64,{icon_base64}" width="28" style="vertical-align: middle; margin-right: 8px; border-radius: 3px;"/>
+                Mengenal Spesies Bunga Iris
+            </h3>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("<h3 style='font-size: 1.2rem; margin-bottom: 1rem;'>🌸 Mengenal Spesies Bunga Iris</h3>", unsafe_allow_html=True)
+        
     with st.container(border=True):
         st.image("https://miro.medium.com/v2/resize:fit:1400/1*ZK9_HrpP_lhSzTq9xVJUQw.png", caption="Perbandingan Tiga Spesies: Iris Setosa, Iris Versicolor, dan Iris Virginica", width='stretch')
