@@ -256,7 +256,7 @@ st.sidebar.markdown("""
 st.sidebar.markdown("<hr style='border: 0; border-top: 1px solid #e2e8f0; margin: 1rem 0;'>", unsafe_allow_html=True)
 st.sidebar.markdown("""
     <div style='text-align: center; font-size: 0.8rem; color: #64748b;'>
-        Dibuat oleh <a href='https://github.com/khamalputra' target='_blank' style='color: #1e40af; text-decoration: none; font-weight: 600;'>khamalputra</a> 💙
+        Dibuat oleh <a href='https://github.com/khamalputra' target='_blank' style='color: #1e40af; text-decoration: none; font-weight: 600;'>Ade Khamelia Putra</a> 💙
     </div>
 """, unsafe_allow_html=True)
 
