@@ -253,12 +253,12 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Main Title Section
-# Embed the custom app icon as a Base64 image in the header title
+# Embed the custom app icon as a Base64 image in the header title (Resized to 60px)
 icon_base64 = get_image_base64(icon_path)
 if icon_base64:
     st.markdown(f"""
         <h1 class='main-title'>
-            <img src="data:image/jpeg;base64,{icon_base64}" width="42" style="vertical-align: middle; margin-right: 12px; border-radius: 4px;"/>
+            <img src="data:image/jpeg;base64,{icon_base64}" width="60" style="vertical-align: middle; margin-right: 15px; border-radius: 6px;"/>
             Analisis Jenis Bunga Iris
         </h1>
     """, unsafe_allow_html=True)
